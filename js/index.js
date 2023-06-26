@@ -30,13 +30,20 @@ const team = [{
     img: 'img/barbara-ramos-graphic-designer.jpg'
 }];
 const mainContainer = document.querySelector(".main-cont");
+
 for (let index = 0; index < team.length; index++) {
+    let myD = document.createElement("div");
+    myD.classList.add("col");
+    mainContainer.append(myD);
     const element = team[index];
     for (const key in element) {
-        let myD = document.createElement("div");
-        mainContainer.append(myD);
-        // key, element[key];
-        myD.innerHTML = `${key}: ${element[key]}`;
-    }
-    
+        let card = `<div class="card">
+                        <img src="${element.img}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.firstName}</h5>
+                            <p class="card-text">${element.role}</p>
+                        </div>
+                    </div>`;
+        myD.innerHTML = card;
+    } 
 }
