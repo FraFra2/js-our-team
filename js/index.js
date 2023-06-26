@@ -29,11 +29,14 @@ const team = [{
     role: "Graphic Designer",
     img: 'img/barbara-ramos-graphic-designer.jpg'
 }];
-
+const mainContainer = document.querySelector(".main-cont");
 for (let index = 0; index < team.length; index++) {
     const element = team[index];
     for (const key in element) {
-        console.log(key, element[key]);
+        let myD = document.createElement("div");
+        mainContainer.append(myD);
+        // key, element[key];
+        myD.innerHTML = `${key}: ${element[key]}`;
     }
     
 }
